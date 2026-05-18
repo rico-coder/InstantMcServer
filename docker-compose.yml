@@ -1,0 +1,38 @@
+services:
+  minecraft:
+    image: eclipse-temurin:21-jre
+    container_name: minecraft-fabric
+    restart: unless-stopped
+    working_dir: /server
+    stdin_open: true
+    tty: true
+
+    ports:
+      - "22000:22000"   # game port
+      - "22001:22001"   # rcon port
+
+    volumes:
+      - ./server:/server      # server files (jars, world, configs)
+      - ./mods:/server/mods   # drop mod jars here
+
+    entrypoint: ["/bin/bash", "/server/start.sh"]
+
+    environment:
+      - JAVA_OPTS=-Xms2G -Xmx4G -XX:+UseG1GC -XX:+ParallelRefProcEnabled
+        -XX:MaxGCPauseMillis=200 -XX:+UnlockExperimentalVMOptions
+        -XX:+DisableExplicitGC -XX:+AlwaysPreTouch
+        -XX:G1NewSizePercent=30 -XX:G1MaxNewSizePercent=40
+        -XX:G1HeapRegionSize=8M -XX:G1ReservePercent=20
+        -XX:G1HeapWastePercent=5 -XX:G1MixedGCCountTarget=4
+        -XX:InitiatingHeapOccupancyPercent=15
+        -XX:G1MixedGCLiveThresholdPercent=90
+        -XX:G1RSetUpdatingPauseTimePercent=5
+        -XX:SurvivorRatio=32 -XX:+PerfDisableSharedMem
+        -XX:MaxTenuringThreshold=1
+
+    # Uncomment to limit container resources:
+    # deploy:
+    #   resources:
+    #     limits:
+    #       memory: 6G
+    #       cpus: '4'
