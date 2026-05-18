@@ -33,3 +33,5 @@ Start the server with ```docker compose up -d```
 start.sh automatically installs fabric and accepts the Minecraft EULA on first startup.
 
 To add Mods, simply add their .jar files into the ```mods/``` folder.
+
+A .zip folder is included with some basic mods, mainly for performance & small enhancements.
