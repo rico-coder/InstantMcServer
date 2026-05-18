@@ -8,7 +8,7 @@ services:
     tty: true
 
     ports:
-      - "22000:22000"   # game port
+      - "25565:25565"   # game port
       - "22001:22001"   # rcon port
 
     volumes:
