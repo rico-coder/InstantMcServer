@@ -5,10 +5,15 @@ Instant Fabric Minecraft Server made by Claude
 ## Server Folder Structure
 
 your-server/
+
 ├── docker-compose.yml
+
 ├── mods/
+
 └── server/
+
     ├── start.sh
+
     └── server.properties
 
 ## Startup
