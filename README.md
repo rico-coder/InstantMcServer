@@ -34,4 +34,4 @@ start.sh automatically installs fabric and accepts the Minecraft EULA on first s
 
 To add Mods, simply add their .jar files into the ```mods/``` folder.
 
-A .zip folder is included with some basic mods, mainly for performance & small enhancements.
+A .zip folder is included with some basic mods, mainly for performance & small enhancements. To use it, unzip the contents into the mods/ folder so that it only includes .jar files. If you don't unzip it, the file will be ignored.
