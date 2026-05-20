@@ -45,6 +45,8 @@ rm -rf server/world
 docker compose up -d
 ```
 
+You will not have to whitelist again since that's saved elsewhere.
+
 ## Whitelist
 
 In order to whitelist yourself on the server, run the following commands:
