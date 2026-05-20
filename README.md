@@ -19,18 +19,30 @@ Before starting up, configure the server.
 
 In server.properties:
 
-- Set a secure password in ```rcon.password```
+- Set a secure password in `rcon.password`
 
 In docker-compose.yml:
 
-- Change ```-Xms2G -Xmx4G``` to fit your server's RAM. Just change the numbers for this.
+- Change `-Xms2G -Xmx4G` to fit your server's RAM. Just change the numbers for this.
 
-Start the server with ```docker compose up -d```
+Start the server with `docker compose up -d`
+
+## Whitelist
+
+In order to whitelist yourself on the server, run the following commands:
+
+``` docker cli
+docker attach <container id>
+
+whitelist add <username>
+```
+
+`docker attach` will give you access to all the logs from the server.
 
 ## Info
 
 start.sh automatically installs fabric and accepts the Minecraft EULA on first startup.
 
-To add Mods, simply add their .jar files into the ```mods/``` folder.
+To add Mods, simply add their .jar files into the `mods/` folder.
 
 A .zip folder is included with some basic mods, mainly for performance & small enhancements. To use it, unzip the contents into the mods/ folder so that it only includes .jar files. If you don't unzip it, the file will be ignored.
