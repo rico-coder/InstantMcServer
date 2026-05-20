@@ -27,6 +27,24 @@ In docker-compose.yml:
 
 Start the server with `docker compose up -d`
 
+## World Seed
+
+To set a custom world seed, either set it before the first start in the server.properties file:
+
+``` server.properties
+level-seed=8537
+```
+
+If you're not happy with your current world, you can use the command chain below to delete it and generate a new one. This will use the seed in server.properties:
+
+``` docker
+docker compose down
+
+rm -rf server/world
+
+docker compose up -d
+```
+
 ## Whitelist
 
 In order to whitelist yourself on the server, run the following commands:
