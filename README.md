@@ -20,7 +20,6 @@ Before starting up, configure the server.
 In server.properties:
 
 - Set a secure password in ```rcon.password```
-- Generate a new ```management-server-secret```. On Linux, you can use this command: ```openssl rand -hex 32```
 
 In docker-compose.yml:
 
