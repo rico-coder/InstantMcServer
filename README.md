@@ -59,6 +59,10 @@ whitelist add <username>
 
 `docker attach` will give you access to all the logs from the server.
 
+## Server Icon
+
+In order to add a server icon, you must add a 64x64 file named exactly "server-icon.png". Then restart the server using `docker compose restart`.
+
 ## Info
 
 start.sh automatically installs fabric and accepts the Minecraft EULA on first startup.
