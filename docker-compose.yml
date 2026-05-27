@@ -1,6 +1,6 @@
 services:
   minecraft:
-    image: instant-fabric-v0.1.0
+    image: eclipse-temurin:21-jre
     container_name: minecraft-fabric
     restart: unless-stopped
     working_dir: /server
