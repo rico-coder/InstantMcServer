@@ -8,8 +8,9 @@ services:
     tty: true
 
     ports:
-      - "25565:25565"   # game port
-      - "22001:22001"   # rcon port
+      - "25565:25565"     # game port
+      - "22001:22001"     # rcon port
+      - "24454:24454/udp" # voice chat port, comment out if not needed
 
     volumes:
       - ./server:/server      # server files (jars, world, configs)
