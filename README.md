@@ -1,6 +1,6 @@
-# instantfabric
+# InstantMcServer
 
-Instant Fabric Minecraft Server made by Claude
+Instant Fabric Minecraft Server made by Claude, [ebholi](https://github.com/ebholi) and [rico-coder](https://github.com/rico-coder)
 
 ## Server Folder Structure
 
@@ -32,7 +32,7 @@ Start the server with `docker compose up -d`
 To set a custom world seed, either set it before the first start in the server.properties file:
 
 ``` server.properties
-level-seed=8537
+level-seed=CUSTOM_SEED
 ```
 
 If you're not happy with your current world, you can use the command chain below to delete it and generate a new one. This will use the seed in server.properties:
@@ -59,6 +59,14 @@ whitelist add <username>
 
 `docker attach` will give you access to all the logs from the server.
 
+
+## OP Player
+``` docker cli
+docker attach <container id>
+
+op <username>
+```
+
 ## Server Icon
 
 In order to add a server icon, you must add a 64x64 file named exactly "server-icon.png". Then restart the server using `docker compose restart`.
@@ -68,5 +76,3 @@ In order to add a server icon, you must add a 64x64 file named exactly "server-i
 start.sh automatically installs fabric and accepts the Minecraft EULA on first startup.
 
 To add Mods, simply add their .jar files into the `mods/` folder.
-
-A .zip folder is included with some basic mods, mainly for performance & small enhancements. To use it, unzip the contents into the mods/ folder so that it only includes .jar files. If you don't unzip it, the file will be ignored and can be safely deleted if you wish.
